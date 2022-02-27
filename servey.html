@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>math game</title>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+    <script type="text/javascript"  src="servey.js"></script>
+    <link rel="stylesheet" href="servey.css">
+</head>
+<body>
+    <header>
+        <div id="intro">
+            C'est une révision de calculer les dérivations simples
+            Les réponses seront visible après cliquer le bouton attack, et attention !! tu perds 2 fois plus
+            vite la vie que le math si ta réponse est incorrect.
+            Je sais que c'est injuste, mais this is life.
+        </div>
+        <div id="progbar">
+            progress bar:
+            <div id="progbar2"></div>
+        </div>
+        <nav>
+            <li><a href="#rappel"> rappel </a></li>
+            <li id="start_test"><a href="#body"> test </a></li>
+        </nav>
+    </header>
+
+        <div id="indication">
+            <h3>Dans ce petit jeu, l'objectif c'est de tuer ton adversaire (qui s'appelle math) par 
+            répondre correctement les questions mathématique.
+            Les réponses seront visible après cliquer le bouton attack, et attention !! tu perds 2 fois plus
+            vite la vie que le math si ta réponse est incorrect.</h3>
+            <h2>Cliquer le bouton "test" pour commencer</h2>
+        </div>
+
+    <div id="test">
+
+        <div id="fight">
+            <div id="prog_bar_toi">
+                <div id="bar_toi">toi</div>
+            </div>
+            <div id="prog_bar_m">
+                <div id="bar_m">adversaire</div>
+            </div>
+        </div>
+        <div id="pic_toi">
+            <img alt="paimon" src="pic/paimon.jpg" height="200px" width="200px" id="t_normal">
+            <img alt="paimon got hurt" src="pic/paimon_hurt.png" height="200px" width="200px" id="t_hurt">
+            <img alt="attack" src="pic/att_toi.jfif" height="50px" width="50px" id="att_toi">
+        </div>
+
+        <div id="pic_m">
+            <img alt="tartaglia" src="pic/childe.png" height="250px" width="180px" id="m_normal"> <!--si le math a ete trop tape, change d'image-->
+            <img alt="got_hurt" src="pic/childe_hurt.png" height="200px" width="200px" id="m_hurt">
+            <img alt="attack" src="pic/att_math.jfif" height="50px" width="50px" id="att_math">
+
+        </div>
+        
+        <br/><br/><br/>
+        <div id="exo1">
+            <img alt="x^2 + 3x^(-1)" src="pic/exo1.png"> <br/>
+            <label><input type="radio" name="exo1" value="2x-3x^(-2)"> 2x-3x^(-2) </label>
+            <label><input type="radio" name="exo1" value="2x+3x^(-1)"> 2x+3x^(-1) </label>
+            <label><input type="radio" name="exo1" value="x^2+3x^(-1)"> x^2+3x^(-1) </label>  
+
+            <div id="button">
+                <button type="button" id="submit1"> attack </button>
+            </div>
+        </div>
+        
+
+        <div id="exo2">
+            <img alt="cos(x)" src="pic/exo2.png"> <br/>
+            <input type="text" id="exo2_input"><br/>
+
+            <div id="button">
+                <button type="button" id="submit2"> attack </button>
+            </div>
+        </div>
+        <div id="exo3">
+            <h3> choisissez les reponses correctes </h3>
+            <label><input type="checkbox" name="exo3" value="1"> Une fonction derivable est toujours continue </label>
+            <label><input type="checkbox" name="exo3" value="3"> Une fonction derivable n'est pas toujours continue </label>
+            <label><input type="checkbox" name="exo3" value="5"> Une fonction continue n'est pas toujours derivable </label>
+            <div id="button">
+                <button type="button" id="submit3"> attack </button>
+            </div>
+        </div>
+        
+        <div id="exo4">
+            <img alt="sin(2x+1)" src="pic/exo4.png"> <br/>
+            <select id="exo4_input">
+                <option value="0">cos(2x+1)</option>
+                <option value="1">2cos(2x+1)</option>
+                <option value="2">sin(2x+1)</option>
+            </select>
+            <br/>
+            <div id="button">
+                <button type="button" id="submit4"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo5">
+            <img src="pic/exo5_0.png" id="exo5_0"> <br/>
+            <img src="pic/exo5_1.png" id="exo5_1"> <br/>
+            <img src="pic/exo5_2.png" id="exo5_2"> <br/>
+            <br/>
+            cliquer sur l'image, trouver une paire de derivation correcte
+            <br/>
+            <div id="button">
+                <button type="button" id="submit5"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo6">
+            <img src="pic/exo6_0.png" id="exo5_0"> <br/>
+            <img src="pic/exo6_1.png" id="exo5_1"> <br/>
+            <br/>
+            Est-ce que la derivation est correcte? (tapez yes ou no)
+            <br/>
+            <input type="text" id="exo6_input"><br/>
+
+            <div id="button">
+                <button type="button" id="submit6"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo7">
+            <img src="pic/exo7.png">
+            <h3>
+                choisissez la reponse correcte
+            </h3>
+            <label><input type="radio" name="exo7" value="0"> la ligne rouge c'est 2x, ligne bleu c'est x^2 </label>
+            <label><input type="radio" name="exo7" value="1"> la ligne rouge c'est x^2, ligne bleu c'est x^3 </label>
+            <br/>
+            <div id="button">
+                <button type="button" id="submit7"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo8">
+            <h3>
+                Qui a inventé la dérivation? donnez le prénom et nom
+            </h3>
+            prénom: <input type="text" id="prenom"><br/>
+            nom: <input type="text" id="nom"><br/>
+            <div id="button">
+                <button type="button" id="submit8"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo9">
+            <h3>
+                donnez la réécriture de log8(x) dans la forme de la division de ln
+            </h3>
+            <input type="text" id="ln"><br/>
+            <div id="button">
+                <button type="button" id="submit9"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo10">
+            <h3>
+                complétez le Π(pi) : 3.14??
+            </h3>
+            <label><input type="radio" name="exo10" value="0"> 1592659323 </label>
+            <label><input type="radio" name="exo10" value="0"> 1592535897 </label>
+            <label><input type="radio" name="exo10" value="1"> 1592653589 </label>
+            <br/>
+            <div id="button">
+                <button type="button" id="submit10"> attack </button>
+            </div>
+        </div>
+
+        <div id="exo11">
+            <h3> sommaire </h3>
+            Dans le match, tes attacks de numéros : <p id="list_c"></p> a fait des damages à math,
+            le math a du coup perdu <p id="status_m"></p> de vie.
+            Et toi, t'as perdu <p id="status_t"></p> de vie, t'es <p id="alive_t"></p>.
+        </div>
+
+
+    </div>
+    <br/><br/><br/><br/><br/><br/>
+
+    <footer>
+        <div id="rappel">
+            (a)' = 0, (x^a)' = ax^(a-1), (sin(x))' = cos(x), (cos(x))' = -sin(x) <br/><br/>
+            (lnx)' = 1/x, (loga(x))' = 1/(x*ln(a)), (a^x)' = a^x*ln(a), (e^x)' = e^x <br/>
+        </div>
+    </footer>
+</body>
+</html>
